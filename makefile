@@ -18,4 +18,8 @@ $(CV): $(TEX) $(MEDIA)
 clean:
 	rm -rf $(BUILDDIR)
 
-.PHONY: all clean
+force: $(TEX) $(MEDIA)
+	$(LC) $< $(CFLAGS) -f > /dev/null
+	mv $(BUILDDIR)/$(TEXNAME).pdf $(CV)
+
+.PHONY: all clean force
