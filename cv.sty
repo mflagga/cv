@@ -7,8 +7,12 @@
 \DeclareOption{polish}{\renewcommand{\cv@lang}{polish}}
 \ProcessOptions\relax
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage{iftex}
+% inputenc/fontenc tylko dla pdfLaTeX; pod LuaLaTeX/XeLaTeX fonty idą przez fontspec
+\ifPDFTeX
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+\fi
 \usepackage[\cv@lang]{babel}
 \usepackage[default]{raleway}
 \usepackage{geometry}

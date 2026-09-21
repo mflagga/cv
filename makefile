@@ -1,7 +1,7 @@
 .SUFFIXES:
 
 LC = latexmk
-CFLAGS = -pdf -interaction=nonstopmode -output-directory=$(BUILDDIR)
+CFLAGS = -lualatex -interaction=nonstopmode -output-directory=$(BUILDDIR)
 BUILDDIR = build
 FIGDIR = img
 LANGS = en pl
