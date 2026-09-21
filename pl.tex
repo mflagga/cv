@@ -1,96 +1,125 @@
-\documentclass[a4paper,10pt]{article}
-\usepackage{cv}
+\documentclass[final,a4paper,10pt,onecolumn]{article}
+\usepackage[polish]{cv}
 
 \begin{document}
 
-\begin{minipage}[c]{0.7\textwidth}
-    {\fontsize{30}{36}\selectfont \textbf{\color{primary} Maciej \color{accent} Flaga}} \\[10pt]
-    \faEnvelope \ \href{mflaga@student.agh.edu.pl}{mflaga@student.agh.edu.pl} \quad
-    \faPhone \ +48 576 396 580 \quad
-    \faMapMarker* \ Rząska
-\end{minipage}
-\begin{minipage}[c]{0.3\textwidth}
-    \raggedleft
-    \includegraphics[width=3.5cm, height=3.5cm, keepaspectratio]{img/zdj.png} 
-\end{minipage}
+\cvheader{Maciej}{Flaga}{mflaga@student.agh.edu.pl}{+48 576 396 580}{Rząska, Polska}
 
-\vspace{10pt}
+% ---------- Sidebar ----------
+\begin{cvsidebar}
 
-\section{Doswiadczenie Zawodowe}
+\section{Oprogramowanie}
 
-\jobentry
-    {Pracownik hali produkcyjnej}
-    {YK Poland Sp. z o.o.}
-    {Modlniczka}
-    {Lipiec 2024 -- Wrzesień 2024 (3 mies.)}
-    {Realizacja pełnego cyklu produkcji ramek metalowych: od cięcia profili i montażu elementów, po foliowanie termiczne oraz finalne pakowanie.}
+\skillgroup{Programowanie i HPC}{
+    \imgitem{img/soft/cpp.png}{C/C++}
+    \imgitem{img/soft/cuda.png}{CUDA C++}
+}
+\skillgroup{Analiza danych}{
+    \imgitem{img/soft/py.png}{Python}
+    \imgitem{img/soft/sql.png}{Podstawy PostgreSQL}
+}
+\skillgroup{Symulacje / Modelowanie}{
+    \imgitem{img/soft/fusion.png}{Autodesk Fusion}
+    \imgitem{img/soft/comsol.jpeg}{COMSOL}
+}
+\skillgroup{Narzędzia deweloperskie}{
+    \imgitem{img/soft/linux.png}{Linux}
+    \imgitem{img/soft/git.png}{Git}
+    \imgitem{img/soft/anthropic.png}{Claude Code}
+}
+\skillgroup{Skład tekstu}{
+    \imgitem{img/soft/latex2.png}{\LaTeX}
+}
 
-\jobentry
-    {Pracownik hali produkcyjnej}
-    {BMK Professional Electronics GmbH}
-    {Augsburg}
-    {Lipiec 2023 -- Wrzesień 2023 (3 mies.)}
-    {Montaż komponentów na płytkach PCB, obsługa procesu lutowania w piecu przelotowym oraz przygotowanie obwodów do produkcji poprzez maskowanie i maszynowe nakładanie powłok ochronnych.}
+\section{Języki}
 
-\section{Wyksztalcenie}
+\begin{iconlist}
+    \flagitem{img/flag/pl.png}{Polski -- ojczysty}
+    \flagitem{img/flag/gb.png}{Angielski -- biegły}
+    \flagitem{img/flag/de.png}{Niemiecki -- podstawowy}
+\end{iconlist}
+
+\section{Certyfikaty}
+
+\begin{iconlist}
+    \imgitem{img/soft/acert.png}{ACERT Business English C1}
+\end{iconlist}
+
+\section{Zainteresowania}
+
+\interestgroup{Naukowe}{
+    \item Cyfrowe modelowanie rzeczywistości
+}
+\interestgroup{Pozanaukowe}{
+    \item Wspinaczka
+    \item Turystyka górska
+    \item Druk 3D i grafika 3D
+}
+
+\end{cvsidebar}
+% ---------- Main column ----------
+\begin{cvmain}
+
+\section{Profil}
+
+Student Nanoinżynierii Materiałów o szczególnym zainteresowaniu fizyką obliczeniową, symulacjami numerycznymi oraz teoretycznymi aspektami inżynierii materiałowej.
+Doświadczony w wykorzystaniu C/C++, Pythona i CUDA w obliczeniach naukowych. 
+Chcę rozwijać umiejętności w zakresie symulacji, modelowania i analizy danych.
+
+\section{Wykształcenie}
 
 \eduentry
     {img/agh.png}
     {Student}
-    {Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie}
-    {Kraków}
-    {Październik 2023 -- obecnie}
-    {Wydział: Fizyki i Informatyki Stosowanej (WFiIS) oraz Inżynierii Materiałowej i Ceramiki (WIMiC)\\Kierunek: Nanoinżynieria Materiałów $I$ stopnia}
+    {Akademia Górniczo-Hutnicza w Krakowie}
+    {Kraków, Polska}
+    {paź. 2023 -- obecnie}
+    {Wydział Fizyki i Informatyki Stosowanej\\
+    Wydział Inżynierii Materiałowej i Ceramiki\\
+    Kierunek: Nanoinżynieria Materiałów\\
+    Specjalność: Modelowanie}
 
-\section{Oprogramowanie i jezyki}
+\section{Doświadczenie zawodowe}
 
-\begin{minipage}[t]{0.48\textwidth}
-    \subsection{Oprogramowanie}
-    \begin{itemize}[leftmargin=2.5em, labelsep=0.5em]
-        \imgitem{img/soft/cpp.png}{Znajomość języków C/C++}
-        \imgitem{img/soft/py.png}{Znajomość języka Python i jego podstawowych bibliotek}
-        \imgitem{img/soft/latex2.png}{Znajomość LaTeX-a}
-        \imgitem{img/soft/cuda.png}{Podstawy nakładki CUDA C++}
-        \imgitem{img/soft/matlab.png}{Podstawy Matlaba}
-        \imgitem{img/soft/linux.png}{Podstawowe komendy systemu Linux}
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\textwidth}
-    \subsection{Języki Obce}
-    \begin{itemize}[leftmargin=2.5em, labelsep=0.5em] 
-        \flagitem{img/flag/pl.png}{Polski -- Ojczysty}
-        \flagitem{img/flag/gb.png}{Angielski -- Poziom zaawansowany}
-        \flagitem{img/flag/de.png}{Niemiecki -- Poziom podstawowy}
-    \end{itemize}
-\end{minipage}
+\jobentry
+    {Analityk danych}
+    {Instytut Fizyki Jądrowej im. Henryka Niewodniczańskiego PAN}
+    {Kraków, Polska}
+    {lip. 2026 -- wrz. 2026 (3 mies.)}
+    {Analiza wieloletnich danych z monitorów neutronów i katalogów trzęsień ziemi w Pythonie, z wykorzystaniem metod Monte Carlo do badania korelacji między promieniowaniem kosmicznym a aktywnością sejsmiczną.}
 
-\section{Umiejetnosci}
-\begin{itemize}[itemsep=1pt, topsep=0pt, leftmargin=1.5em]
-    \item Analityczne myślenie i rozwiązywanie problemów
-    \item Umiejętność szybkiego uczenia się
-\end{itemize}
+\jobentry
+    {Pracownik hali produkcyjnej}
+    {YK Poland Sp. z o.o.}
+    {Modlniczka, Polska}
+    {lip. 2024 -- wrz. 2024 (3 mies.)}
+    {Realizacja pełnego cyklu produkcji ramek metalowych: od cięcia profili i montażu elementów, po foliowanie termiczne oraz finalne pakowanie.}
 
-\section{Certyfikaty}
-\begin{itemize}[itemsep=1pt, topsep=0pt, leftmargin=1.5em]
-    \item Acert Business English C1 (2025)
-\end{itemize}
+\jobentry
+    {Pracownik hali produkcyjnej}
+    {BMK Professional Electronics}
+    {Augsburg, Niemcy}
+    {lip. 2023 -- wrz. 2023 (3 mies.)}
+    {Montaż komponentów na płytkach PCB, obsługa procesu lutowania w piecu przelotowym oraz przygotowanie obwodów do produkcji poprzez maskowanie i maszynowe nakładanie powłok ochronnych.}
 
-\section{Zainteresowania}
+\section{Projekty akademickie}
 
-\begin{minipage}[t]{0.48\textwidth}
-    \subsection{Naukowe}
-    \begin{itemize}[itemsep=1pt, leftmargin=1.5em]
-        \item Komputerowe symulacje rzeczywistości
-        \item Rachunek residuów
-    \end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\textwidth}
-    \subsection{Pozanaukowe}
-    \begin{itemize}[itemsep=1pt, leftmargin=1.5em]
-        \item Bouldering i wspinaczka linowa
-    \end{itemize}
-\end{minipage}
+\projentry
+    {\href{https://github.com/mflagga/cuda-cfd-solver}{Symulacja transportu masy}}
+    {
+        Stworzenie akcelerowanego na GPU silnika obliczeniowej dynamiki płynów (CFD) do symulacji przepływu nieściśliwego i transportu masy w oparciu o równania \textbf{Naviera-Stokesa} oraz \textbf{adwekcji-dyfuzji}.
+        Implementacja sformułowania funkcja prądu -- wirowość metodą różnic skończonych; powstałe układy równań liniowych rozwiązywane są \textbf{równoległą relaksacją Gaussa-Seidela (red-black)} we własnych kernelach \textbf{CUDA}.
+        Symulacja wykorzystuje \textbf{schemat Cranka-Nicolson} do stabilnego całkowania rozkładu masy w czasie oraz potok \textbf{Python/FFmpeg} do renderowania animacji pól prędkości i map stężenia.
+    }
+
+\projentry
+    {\href{https://github.com/mflagga/wave-vis}{Symulacja równania falowego (2+1)D}}
+    {
+        Stworzenie wydajnego wizualizatora równania falowego (2+1)D opartego na dokładnym rozwiązaniu analitycznym wyprowadzonym metodą \textbf{separacji zmiennych} i \textbf{rozwinięcia w szereg Fouriera}.
+        Numeryczne obliczanie podwójnego szeregu nieskończonego w \textbf{CUDA C++} z równoległym sumowaniem na GPU, co umożliwia obliczenia na siatkach o wysokiej rozdzielczości.
+        Projekt obejmuje w pełni zautomatyzowany potok łączący backend w C++, \textbf{Python (Matplotlib)} do wykresów powierzchni 3D oraz \textbf{FFmpeg} do renderowania wideo, sterowany własnym \textbf{Makefile}.
+    }
+
+\end{cvmain}
 
 \end{document}

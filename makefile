@@ -4,22 +4,23 @@ LC = latexmk
 CFLAGS = -pdf -interaction=nonstopmode -output-directory=$(BUILDDIR)
 BUILDDIR = build
 FIGDIR = img
-TEXNAME = en
-TEX = $(TEXNAME).tex
-MEDIA = $(FIGDIR)/agh.png $(FIGDIR)/white.png $(FIGDIR)/zdj.png $(FIGDIR)/flag/de.png $(FIGDIR)/flag/gb.png $(FIGDIR)/flag/pl.png $(FIGDIR)/soft/acert.png $(FIGDIR)/soft/cpp.png $(FIGDIR)/soft/cuda.png $(FIGDIR)/soft/latex2.png $(FIGDIR)/soft/linux.png $(FIGDIR)/soft/matlab.png $(FIGDIR)/soft/py.png
-CV = CV.pdf
+LANGS = en pl
+STY = cv.sty
+MEDIA = $(wildcard $(FIGDIR)/*.png $(FIGDIR)/*/*.png $(FIGDIR)/*/*.jpg $(FIGDIR)/*/*.jpeg $(FIGDIR)/*/*.pdf)
+CVS = $(LANGS:%=CV_%.pdf)
 
-all: $(CV)
+all: $(CVS)
 
-$(CV): $(TEX) $(MEDIA)
+CV_%.pdf: %.tex $(STY) $(MEDIA)
 	$(LC) $< $(CFLAGS) > /dev/null
-	mv $(BUILDDIR)/$(TEXNAME).pdf $@
+	mv $(BUILDDIR)/$*.pdf $@
 
 clean:
 	rm -rf $(BUILDDIR)
 
-force: $(TEX) $(MEDIA)
-	$(LC) $< $(CFLAGS) -f > /dev/null
-	mv $(BUILDDIR)/$(TEXNAME).pdf $(CV)
+force:
+	for l in $(LANGS); do \
+		$(LC) $$l.tex $(CFLAGS) -f > /dev/null && mv $(BUILDDIR)/$$l.pdf CV_$$l.pdf || exit 1; \
+	done
 
 .PHONY: all clean force
